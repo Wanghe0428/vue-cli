@@ -8,7 +8,7 @@ import inquirer from "inquirer";
 // 引入用于读取文件的node原生模块fs
 import fs from "fs";
 // 引入handlebars模块，用于解析项目中的package.json文件
-import handlebars from "handlebars"
+import handlebars from "handlebars"  //handlebars功能是：命令行交互时把你输入的一些信息动态编译到包管理文件package.json中
 // 引入样式美化模块ora
 import ora from "ora";
 // 引入chalk模块，用来增加字体颜色美化效果
@@ -64,8 +64,6 @@ program
     .action((templateName, projectName) => {
         // 下载之前做loading提示
         const spinner = ora("正在下载模板").start();
-
-
 
         // 根据模板名下载对应的模板到本地
         // console.log(templates[templateName].url);
@@ -127,8 +125,6 @@ program
                         // Something else went wrong
                     }
                 });
-
-            // 解析完毕，把解析之后的结果重新写入到package.json文件中
         })
     });
 
